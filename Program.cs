@@ -4,7 +4,7 @@ using Spectre.Console;
 
 class Program
 {
-static void Main()
+    static void Main()
     {
         // Solicitar datos
         Console.Write("Ingrese el monto del préstamo: ");
