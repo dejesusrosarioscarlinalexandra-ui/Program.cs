@@ -1,6 +1,3 @@
-﻿using System;
-using Spectre.Console;
-
 class Program
 {
     static void Main()
@@ -99,3 +96,4 @@ class Program
         AnsiConsole.Write(tabla);
     }
 }
+
