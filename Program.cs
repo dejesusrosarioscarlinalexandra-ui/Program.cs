@@ -1,23 +1,13 @@
-﻿// Variables y principales tipos de datos
-string nombre;
-string apellido;
-int edad;
-float altura;
+﻿using Bookcase.Database;
+using Bookcase.Repository;
+using Bookcase.Services;
+using Bookcase.Screens;
 
-// Entrada de datos
-Console.Write("Nombre: ");
-nombre = Console.ReadLine()!;
+var db = new Database("gym.db");
+db.Initialize();
 
-Console.Write("Apellido: ");
-apellido = Console.ReadLine()!;
+var repo = new MiembroRepository(db);
+var service = new MiembroService(repo);
+var screen = new MainScreen(service);
 
-Console.Write("Edad: ");
-edad = int.Parse(Console.ReadLine()!);
-
-Console.Write("Altura: ");
-altura = float.Parse(Console.ReadLine()!);
-
-// Salida final
-Console.WriteLine($"\nHola, mi nombre es {nombre} {apellido}");
-Console.WriteLine($"Tengo {edad} años de edad");
-Console.WriteLine($"Mi altura es {altura}");
+screen.Show();
